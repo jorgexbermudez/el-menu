@@ -1,0 +1,102 @@
+<div *ngIf="item" class="container-fluid" style="padding-top: 3%;">
+  <div class="row">
+    <!--Columna izquierda-->
+    <div class="col-md-4 text-center align-items-center">
+      <img src="./assets/img/items/{{item.id}}.jpg" onerror="this.onerror=null; this.src='./assets/img/items/0.jpg'"
+        style="max-width: 230px; height: auto; border-radius: 10%">
+      <br><br>
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <td class="font-weight-bold">Dificultad</td>
+            <td class="text-left">{{item.dificultad | dificultad}}</td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Calificación</td>
+            <td class="text-left"><span *ngFor="let item of [].constructor(calificacion)">⭐️</span></td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Necesitas</td>
+            <td class="text-left">{{item.instrumento | instrumento}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-warning" (click)="goBack()">Regresar</button>
+    </div>
+
+    <!--Columna derecha-->
+    <div class="col">
+      <div>
+        <div class="display-4">{{item.nombre}}</div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+
+        <div *ngIf="item.extra[0] || item.ingredientes[0] || item.variacion[0]" class="col-md">
+
+          <div *ngIf="item.variacion[0]">
+            <h5>Elige entre:</h5>
+            <h6 class="font-weight-light" *ngFor="let variacion of item.variacion; index as i">
+              👉🏼 {{variacion}}</h6>
+              <hr class="my-3">
+          </div>
+          
+          <div *ngIf="item.ingredientes[0]">
+            <h5>Ingredientes:</h5>
+            <h6 *ngFor="let ingrediente of item.ingredientes; index as i">🔘 {{ingrediente}}</h6>
+            <hr class="my-3">
+          </div>
+
+          <div *ngIf="item.extra[0]">
+            <h5>Extras:</h5>
+            <h6 *ngFor="let extra of item.extra; index as i">➕ {{extra}}</h6>
+          </div>
+        </div>
+
+        <div *ngIf="item.receta || item.link[0]" class="col-md border-left">
+          <div *ngIf="item.receta"></div>
+          <h3>Preparación:</h3>
+          <hr class="my-1">
+          <p *ngFor="let oracion of recetaOraciones; index as i" class="font-weight-light; font-italic">{{oracion}}.</p>
+          <div *ngIf="item.link[0]">
+            <hr class="my-2">
+            <h5>Links útiles:</h5>
+            <ul>
+              <li *ngFor="let href of item.link; index as i"><a href="{{href}}" target="_blank">🌎 Link {{i+1}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="itemsRelacionados.length > 0" class="container-fluid">
+  <div class="row">
+    <div class="col-12 justify-content-center align-items-center">
+      <br>
+      <div class="d-flex mx-auto">
+        <div class="card bg-light mb-3 mx-auto d-inline-flex overflow-auto" style="min-width:55%; max-width: 95%;">
+          <div class="card-body">
+            <h5 class="card-title">Relacionados: </h5>
+            <div class="row flex-row flex-nowrap overflow-auto">
+              <!-- Lista de items -->
+              <div class="col-xs-6" *ngFor="let item of itemsRelacionados;">
+                <div class="" *ngIf="true">
+                  <div class="card border-light rounded pointer" routerLink="/detalle/{{item.id}}" id="cardlink"
+                    style="width: 12rem; height: 12rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+                    <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                      style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                      <p class="card-title text-center text-white module-adjust-90">{{item.nombre}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

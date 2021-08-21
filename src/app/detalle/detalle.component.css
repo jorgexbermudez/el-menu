@@ -1,0 +1,9 @@
+.testimonial-group > .row {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .testimonial-group > .row > .col-6 {
+    display: inline-block;
+    float: none;
+  }
+

@@ -1,0 +1,207 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 text-center align-items-center"
+            style="padding-left: 0%;padding-right: 0%;padding-top: 0px;">
+            <div class="jumbotron jumbotron-fluid bg-transparent form-rounded default"
+                style="top: 0px;left: 0;width: 100%;text-align: center;margin-bottom: 0px;padding-top: 10%;padding-bottom: 0px;">
+                <div class="container-fluid">
+                    <div width="100%" height="100%">
+                        <table style="margin: 0 auto;">
+                            <th id="tabletitle">
+                                <h4>Mis {{rutaTipo | tipo}}</h4>
+                            </th>
+                        </table>
+                    </div>
+
+                    <a routerLink="/detalle/{{randomId}}">
+                        <label class="btn btn-light pointer w-100 rounded"> 🔀 Aleatorio
+                        </label></a>
+
+                    <!--Filtros-->
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header bg-dark" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="false" aria-controls="collapseOne" id="headingOne">
+                                <p class="mb-0 text-light">
+                                    Filtros
+                                </p>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+
+                                <div *ngIf="rutaTipo==1 || rutaTipo==3">
+                                    <!--Filtro Sabor-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Sabor</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{saborSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setSaborSelected(0)"> Todo
+                                        </label>
+                                        <label
+                                            class="{{saborSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setSaborSelected(1)"> 🍳 Salado
+                                        </label>
+                                        <label
+                                            class="{{saborSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setSaborSelected(2)"> 🧇 Dulce
+                                        </label>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div *ngIf="rutaTipo==2">
+                                    <!--Filtro Instrumento-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Instrumento</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{instrumentoSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setInstrumentoSelected(0)">Todo
+                                        </label>
+                                        <label
+                                            class="{{instrumentoSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setInstrumentoSelected(1)"> 🔥 Estufa
+                                        </label>
+                                        <label
+                                            class="{{instrumentoSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setInstrumentoSelected(2)"> 🎛 Horno
+                                        </label>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div *ngIf="true">
+                                    <!--Filtro Hambre-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Hambre</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{hambreSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setHambreSelected(0)"> Cualquiera
+                                        </label>
+                                        <label
+                                            class="{{hambreSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setHambreSelected(1)"> 🤐 Poca
+                                        </label>
+                                        <label
+                                            class="{{hambreSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setHambreSelected(2)"> 😐 Media
+                                        </label>
+                                        <label
+                                            class="{{hambreSelected == 3 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setHambreSelected(3)"> 🤤 Mucha
+                                        </label>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div *ngIf="true">
+                                    <!--Filtro Dificultad-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Dificultad</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{dificultadSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setDificultadSelected(0)"> Cualquiera
+                                        </label>
+                                        <label
+                                            class="{{dificultadSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setDificultadSelected(1)"> 🧒🏻 Básico
+                                        </label>
+                                        <label
+                                            class="{{dificultadSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setDificultadSelected(2)"> 🧑🏻‍💼 Promedio
+                                        </label>
+                                        <label
+                                            class="{{dificultadSelected == 3 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setDificultadSelected(3)"> 👨🏻‍🍳 Avanzado
+                                        </label>
+                                        <label
+                                            class="{{dificultadSelected == 4 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setDificultadSelected(4)"> 🧑🏼‍🍳 Masterchef
+                                        </label>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div *ngIf="true">
+                                    <!--Filtro Calificación-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Calificación</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{calificacionSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(0)"> Cualquiera
+                                        </label>
+                                        <label
+                                            class="{{calificacionSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(1)"> ⭐️
+                                        </label>
+                                        <label
+                                            class="{{calificacionSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(2)"> ⭐️⭐️
+                                        </label>
+                                        <label
+                                            class="{{calificacionSelected == 3 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(3)"> ⭐️⭐️⭐️
+                                        </label>
+                                        <label
+                                            class="{{calificacionSelected == 4 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(4)"> ⭐️⭐️⭐️⭐️
+                                        </label>
+                                        <label
+                                            class="{{calificacionSelected == 5 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setCalificacionSelected(5)"> ⭐️⭐️⭐️⭐️🌟
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="true">
+                                    <!--Filtro Preparación-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Preparación</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{preparacionSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setPreparacionSelected(0)"> Cualquiera
+                                        </label>
+                                        <label
+                                            class="{{preparacionSelected == 1 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setPreparacionSelected(1)"> 👨🏻‍🍳 Preparar
+                                        </label>
+                                        <label
+                                            class="{{preparacionSelected == 2 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setPreparacionSelected(2)"> 💸 Comprar
+                                        </label>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+
+        <div class="col-sm text-center align-items-center justify-content-center default" style="padding-top: 10px;">
+            <br>
+            <div class="row justify-content-center align-items-top text-align-center">
+                <!-- Lista de items -->
+                <div class="col-xs-6" *ngFor="let item of items;">
+                    <div class="" *ngIf="(item.sabor == saborSelected || saborSelected==0)
+                    && (item.dificultad == dificultadSelected || dificultadSelected==0)
+                    && (item.calificacion == calificacionSelected || calificacionSelected==0)
+                    && (item.instrumento == instrumentoSelected || instrumentoSelected==0)
+                    && (item.hambre == hambreSelected || hambreSelected==0)
+                    && (item.preparacion == preparacionSelected || preparacionSelected==0)">
+                        <div class="card border-light rounded pointer" routerLink="/detalle/{{item.id}}" id="cardlink"
+                            style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+                            <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                                <p class="card-title text-center text-white module-adjust-90">{{item.nombre}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
