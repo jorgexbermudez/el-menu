@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { TipoEnum, DificultadEnum, InstrumentoEnum, HambreEnum, PreparacionEnum, SaborEnum } from '../categorias';
+import { TipoEnum } from '../categorias';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { TipoPipe } from '../tipo.pipe';
