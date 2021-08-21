@@ -24,6 +24,8 @@ export class TipoPipe implements PipeTransform {
       return "Antojos";
     } else if (tipo == 9) {
       return "Postres";
+    }else if (tipo == 10) {
+      return "Comidas";
     }else {
       return "Desconocida!";
     }

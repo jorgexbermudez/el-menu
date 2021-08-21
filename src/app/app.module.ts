@@ -11,6 +11,7 @@ import { TipoPipe } from './tipo.pipe';
 import { DificultadPipe } from './dificultad.pipe';
 import { InstrumentoPipe } from './instrumento.pipe';
 import { NuevalineaPipe } from './nuevalinea.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NuevalineaPipe } from './nuevalinea.pipe';
     TipoPipe,
     DificultadPipe,
     InstrumentoPipe,
-    NuevalineaPipe
+    NuevalineaPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

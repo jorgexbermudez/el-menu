@@ -18,8 +18,6 @@ export class ItemService {
 
   getItemsTipo(tipo: TipoEnum): Observable<Item[]>{
     let result = ITEMS.filter(i => i.tipo.find((a)=> a === tipo));
-    console.log("Tipo:"+tipo)
-    console.log(result);
     return of(result);
   }
   
@@ -40,7 +38,10 @@ export class ItemService {
     return of(result);
   }
 
-  
+  getTopItems(): Observable<Item[]>{
+    let result = ITEMS.filter(i => i.calificacion === 5);
+    return of(result);
+  }
 
 
 }

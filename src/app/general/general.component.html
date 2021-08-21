@@ -30,7 +30,7 @@
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                                 data-parent="#accordion">
 
-                                <div *ngIf="rutaTipo==1 || rutaTipo==3">
+                                <div *ngIf="rutaTipo==1 || rutaTipo==3 || rutaTipo==8">
                                     <!--Filtro Sabor-->
                                     <p class="bg-secondary text-light w-100 rounded-0">Sabor</p>
                                     <div class="btn-group-vertical">
@@ -70,7 +70,23 @@
                                     <br>
                                 </div>
 
-                                <div *ngIf="true">
+                                <div *ngIf="rutaTipo==1 || rutaTipo==3 || rutaTipo==10">
+                                    <!--Filtro Tipo-->
+                                    <p class="bg-secondary text-light w-100 rounded-0">Tipo</p>
+                                    <div class="btn-group-vertical">
+                                        <label
+                                            class="{{tipoSelected == 0 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                            (click)="setTipoSelected(0)"> Todo
+                                        </label>
+                                        <label
+                                        class="{{tipoSelected == 4 ? 'btn btn-dark pointer' : 'btn btn-light pointer'}}"
+                                        (click)="setTipoSelected(4)">🥤 Solo Bebidas
+                                    </label>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div *ngIf="rutaTipo==1 || rutaTipo==3">
                                     <!--Filtro Hambre-->
                                     <p class="bg-secondary text-light w-100 rounded-0">Hambre</p>
                                     <div class="btn-group-vertical">
@@ -94,7 +110,7 @@
                                     <br>
                                 </div>
 
-                                <div *ngIf="true">
+                                <div *ngIf="rutaTipo==2">
                                     <!--Filtro Dificultad-->
                                     <p class="bg-secondary text-light w-100 rounded-0">Dificultad</p>
                                     <div class="btn-group-vertical">
@@ -153,7 +169,7 @@
                                     </div>
                                 </div>
 
-                                <div *ngIf="true">
+                                <div *ngIf="rutaTipo==8">
                                     <!--Filtro Preparación-->
                                     <p class="bg-secondary text-light w-100 rounded-0">Preparación</p>
                                     <div class="btn-group-vertical">
@@ -191,7 +207,8 @@
                     && (item.calificacion == calificacionSelected || calificacionSelected==0)
                     && (item.instrumento == instrumentoSelected || instrumentoSelected==0)
                     && (item.hambre == hambreSelected || hambreSelected==0)
-                    && (item.preparacion == preparacionSelected || preparacionSelected==0)">
+                    && (item.preparacion == preparacionSelected || preparacionSelected==0)
+                    && (item.tipo.includes(tipoSelected) || tipoSelected==0)">
                         <div class="card border-light rounded pointer" routerLink="/detalle/{{item.id}}" id="cardlink"
                             style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
                             <div class="card-body h-100 justify-content-center d-flex align-items-end"
@@ -205,3 +222,4 @@
         </div>
     </div>
 </div>
+<br>

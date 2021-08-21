@@ -1,5 +1,5 @@
 export enum TipoEnum{
-    cualquiera=0, desayuno=1, platofuerte=2, cena=3, bebida=4, guarnicion=5, sopa=6, ensalada=7, antojo=8, postre=9,
+    cualquiera=0, desayuno=1, platofuerte=2, cena=3, bebida=4, guarnicion=5, sopa=6, ensalada=7, antojo=8, postre=9, comida=10,
 }
 
 export enum SaborEnum{

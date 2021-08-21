@@ -24,6 +24,7 @@ export class GeneralComponent implements OnInit, OnDestroy {
   hambreSelected=0;
   preparacionSelected=0;
   saborSelected=0;
+  tipoSelected=0;
 
   constructor(private itemService: ItemService,
     private route: ActivatedRoute,
@@ -90,6 +91,10 @@ export class GeneralComponent implements OnInit, OnDestroy {
     this.instrumentoSelected = instrumento;
   }
 
+  setTipoSelected(tipo: number):void{
+    this.tipoSelected = tipo;
+  }
+
   resetFiltros():void{
     this.calificacionSelected =0;
     this.dificultadSelected=0;
@@ -97,6 +102,7 @@ export class GeneralComponent implements OnInit, OnDestroy {
     this.hambreSelected=0;
     this.preparacionSelected=0;
     this.saborSelected=0;
+    this.tipoSelected=0;
   }
 
   goBack(): void {

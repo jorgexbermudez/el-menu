@@ -1,0 +1,157 @@
+<div class="container">
+    <br>
+    <div class="row text-center justify-content-center">
+        <!--Tarjeta izquierda-->
+        <div class="col-xs-4">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="display-4 text-center">Armar Menú</h1>
+                    </div>
+                    <form>
+                        <br>
+                        <div class="form">
+                            <label class="display-extra" for="diasMenu">Días&nbsp;</label>
+                            <input
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                type="number" pattern="\d*" min=1 max=31 maxlength="2"
+                                class="text-center display-extra form-rounded" style="width:5rem; height:4rem" autofocus>
+                        </div>
+                        <br>
+                        <div class="form-check form-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="desayuno">
+                            <label class="form-check-label display-extra" for="desayuno">
+                                Desayuno
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-check form-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="comida">
+                            <label class="form-check-label display-extra" for="comida">
+                                Plato Fuerte
+                            </label>
+                        </div>
+                        <div class="form-check form-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="sopa">
+                            <label class="form-check-label display-extra-2" for="sopa">
+                                &nbsp;Sopa&nbsp;&nbsp;&nbsp;
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="guarnicion">
+                            <label class="form-check-label display-extra-2" for="guarnicion">
+                                &nbsp;Guarnición&nbsp;&nbsp;&nbsp;
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="" id="ensalada">
+                            <label class="form-check-label display-extra-2" for="ensalada">
+                                &nbsp;Ensalada&nbsp;&nbsp;&nbsp;
+                            </label>
+                        </div>
+
+                        <br>
+                        <div class="form-check form-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="cena">
+                            <label class="form-check-label display-extra" for="cena">
+                                Cena
+                            </label>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success">Armar</button>
+                        <br>
+                        <br>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!--Tarjeta izquierda-->
+        <div class="col-md-6">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="display-4 text-center">Tus Top</h1>
+                    </div>
+
+
+                    <div class="row w-100 justify-content-center mx-auto">
+                        <h2>Desayunos</h2>
+                    </div>
+                    <div class="card-body justify-content-center overflow-auto" style="
+                    padding-top: 0px;">
+                        <!-- Lista de Top Desayunos -->
+                        <div class="d-flex">
+                            <span *ngFor="let item of topItems;">
+                                <div *ngIf="(item.tipo.includes(1) && !item.tipo.includes(4))"
+                                    class=" card border-light rounded pointer" routerLink="/detalle/{{item.id}}"
+                                    id="cardlink"
+                                    style="width: 8rem; height: 8rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+                                    <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                                        style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                                        <p class="card-title text-center text-white module-adjust-90">
+                                            {{item.nombre}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <hr class="my-2">
+                    <div class="row w-100 justify-content-center mx-auto">
+                        <h2>Platos Fuertes</h2>
+                    </div>
+                    <div class="card-body justify-content-center overflow-auto" style="
+                    padding-top: 0px;">
+                        <!-- Lista de Top Platos Fuertes -->
+                        <div class="d-flex">
+                            <span *ngFor="let item of topItems;">
+                                <div *ngIf="(item.tipo.includes(2) && !item.tipo.includes(4))"
+                                    class=" card border-light rounded pointer" routerLink="/detalle/{{item.id}}"
+                                    id="cardlink"
+                                    style="width: 8rem; height: 8rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+                                    <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                                        style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                                        <p class="card-title text-center text-white module-adjust-90">
+                                            {{item.nombre}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <hr class="my-2">
+                    <div class="row w-100 justify-content-center mx-auto">
+                        <h2>Cenas</h2>
+                    </div>
+                    <div class="card-body justify-content-center overflow-auto" style="
+                    padding-top: 0px;">
+                        <!-- Lista de Top Cenas -->
+                        <div class="d-flex">
+                            <span *ngFor="let item of topItems;">
+                                <div *ngIf="(item.tipo.includes(3) && !item.tipo.includes(4))"
+                                    class=" card border-light rounded pointer" routerLink="/detalle/{{item.id}}"
+                                    id="cardlink"
+                                    style="width: 8rem; height: 8rem; background-image: url(./assets/img/items/{{item.id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+                                    <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                                        style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                                        <p class="card-title text-center text-white module-adjust-90">
+                                            {{item.nombre}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </span>
+                            <hr class="my-3">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -10,12 +10,35 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/general/1"> ☕️ Desayunos </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/general/2"> 🥘 Comidas </a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              🥘 Comidas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/general/2">🍗 Platos Fuertes</a>
+              <a class="dropdown-item" routerLink="/general/7">🥗 Ensaladas</a>
+              <a class="dropdown-item" routerLink="/general/5">🍛 Guarniciones</a>
+              <a class="dropdown-item" routerLink="/general/6">🍲 Sopas</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/general/10">Todo</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/general/3"> 🥛 Cenas </a>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              🥄 Otros
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/general/9">🍰 Postres</a>
+              <a class="dropdown-item" routerLink="/general/4">🍹 Bebidas</a>
+              <a class="dropdown-item" routerLink="/general/8">🍿 Antojos</a>
+            </div>
+          </li>
+
         </ul>
       </div>
     </nav>

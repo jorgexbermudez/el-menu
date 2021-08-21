@@ -1,3 +1,30 @@
 #cardlink:hover{
     cursor: pointer
   }
+
+  .display-extra{
+    font-size:2.5rem;
+    font-weight:300;
+    line-height:1.2
+  }
+  .display-extra2{
+    font-size:2.0rem;
+    font-weight:300;
+    line-height:1.2
+  }
+  .display-extra3{
+    font-size:1.66rem;
+    font-weight:100;
+    line-height:1.0
+  }
+  
+  .display-mini{
+    font-size:1rem;
+    font-weight:300;
+    line-height:1.2
+  }
+  .display-terms{
+    font-size:0.3rem;
+    font-weight:200;
+    line-height:1.0
+  }
