@@ -1,0 +1,100 @@
+<div class="container-flex">
+  <br>
+  <div class="d-flex justify-content-center align-content-around">
+    <button type="button" class="btn btn-dark" routerLink="/#">🔄 Repetir</button>
+    <button type="button" class="btn btn-dark">📄 Guardar como PDF</button>
+  </div>
+  <hr class="my-1">
+  <div class="table-responsive">
+    <table class="table w-auto mx-auto">
+      <thead >
+        <tr class="text-center">
+          <th scope="col">Día</th>
+          <th scope="col" *ngIf="desayunoItems[0]">Desayuno</th>
+          <th scope="col" *ngIf="comidaItems[0]">Plato Fuerte</th>
+          <th scope="col" *ngIf="sopaItems[0]">Sopa</th>
+          <th scope="col" *ngIf="ensaladaItems[0]">Ensalada</th>
+          <th scope="col" *ngIf="guarnicionItems[0]">Guarnición</th>
+          <th scope="col" *ngIf="cenaItems[0]">Cena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let n of indexTotal ;let i = index'>
+          <td style="text-align: center; vertical-align: middle;">{{i+1}}</td>
+          <td *ngIf="desayunoItems[0]">
+            <div class="card border-light rounded pointer mx-auto"
+              routerLink="/detalle/{{desayunoItems[desayunosRandom[i]].id}}" id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{desayunoItems[desayunosRandom[i]].id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{desayunoItems[desayunosRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="comidaItems[0]">
+            <div class="card border-light rounded pointer mx-auto" routerLink="/detalle/{{comidaItems[comidasRandom[i]].id}}"
+              id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{comidaItems[comidasRandom[i]].id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{comidaItems[comidasRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="sopaItems[0]">
+            <div class="card border-light rounded pointer mx-auto" routerLink="/detalle/{{sopaItems[sopasRandom[i]].id}}"
+              id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{sopaItems[sopasRandom[i]].id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{sopaItems[sopasRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="ensaladaItems[0]">
+            <div class="card border-light rounded pointer mx-auto" routerLink="/detalle/{{ensaladaItems[ensaladasRandom[i]].id}}"
+              id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{ensaladaItems[ensaladasRandom[i]].id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{ensaladaItems[ensaladasRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="guarnicionItems[0]">
+            <div class="card border-light rounded pointer mx-auto" routerLink="/detalle/{{guarnicionItems[guarnicionesRandom[i]].id}}"
+              id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{guarnicionItems[guarnicionesRandom[i]].id}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{guarnicionItems[guarnicionesRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="cenaItems[0]">
+            <div class="card border-light rounded pointer mx-auto" routerLink="/detalle/{{cenaItems[cenasRandom[i]].id}}"
+              id="cardlink"
+              style="width: 9.5rem; height: 9.5rem; background-image: url(./assets/img/items/{{cenaItems[cenasRandom[i]]}}.jpg);background-size: contain;background-repeat: no-repeat;">
+              <div class="card-body h-100 justify-content-center d-flex align-items-end"
+                style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4))">
+                <p class="card-title text-center text-white module-adjust-90">
+                  {{cenaItems[cenasRandom[i]].nombre}}</p>
+              </div>
+            </div>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

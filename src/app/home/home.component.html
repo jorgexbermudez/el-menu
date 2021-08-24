@@ -15,46 +15,47 @@
                             <input
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 type="number" pattern="\d*" min=1 max=31 maxlength="2"
-                                class="text-center display-extra form-rounded" style="width:5rem; height:4rem" autofocus>
+                                class="text-center display-extra form-rounded" style="width:5rem; height:4rem" 
+                                [(ngModel)]="diasSelected" [ngModelOptions]="{standalone: true}"
+                                autofocus>
                         </div>
                         <br>
                         <div class="form-check form-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="desayuno">
+                            <input class="form-check-input" type="checkbox" value="" id="desayuno" [(ngModel)]="desayunoSelected" [ngModelOptions]="{standalone: true}">
                             <label class="form-check-label display-extra" for="desayuno">
                                 Desayuno
                             </label>
                         </div>
                         <br>
                         <div class="form-check form-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="comida">
+                            <input class="form-check-input" type="checkbox" value="" id="comida" [(ngModel)]="comidaSelected" [ngModelOptions]="{standalone: true}">
                             <label class="form-check-label display-extra" for="comida">
                                 Plato Fuerte
                             </label>
                         </div>
                         <div class="form-check form-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="sopa">
+                            <input class="form-check-input" type="checkbox" value="" id="sopa" [(ngModel)]="sopaSelected" [ngModelOptions]="{standalone: true}">
                             <label class="form-check-label display-extra-2" for="sopa">
                                 &nbsp;Sopa&nbsp;&nbsp;&nbsp;
                             </label>
-                            <input class="form-check-input" type="checkbox" value="" id="guarnicion">
+                            <input class="form-check-input" type="checkbox" value="" id="guarnicion" [(ngModel)]="guarnicionSelected" [ngModelOptions]="{standalone: true}">
                             <label class="form-check-label display-extra-2" for="guarnicion">
                                 &nbsp;Guarnición&nbsp;&nbsp;&nbsp;
                             </label>
-                            <input class="form-check-input" type="checkbox" value="" id="ensalada">
+                            <input class="form-check-input" type="checkbox" value="" id="ensalada" [(ngModel)]="ensaladaSelected" [ngModelOptions]="{standalone: true}">
                             <label class="form-check-label display-extra-2" for="ensalada">
                                 &nbsp;Ensalada&nbsp;&nbsp;&nbsp;
                             </label>
                         </div>
-
                         <br>
                         <div class="form-check form-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="cena">
+                            <input class="form-check-input" type="checkbox" value="" id="cena" [(ngModel)]="cenaSelected" [ngModelOptions]="{standalone: true}" (change)="checkCheckBoxvalue()">
                             <label class="form-check-label display-extra" for="cena">
                                 Cena
                             </label>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-success">Armar</button>
+                        <a [routerLink]="['/armar-menu']" [queryParams]="{dias: diasSelected,desayuno:desayunoSelected, comida: comidaSelected, sopa:sopaSelected, ensalada: ensaladaSelected, guarnicion: guarnicionSelected, cena: cenaSelected}" ><button type="submit" class="btn btn-success">Armar</button></a>
                         <br>
                         <br>
                     </form>

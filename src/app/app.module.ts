@@ -12,6 +12,8 @@ import { DificultadPipe } from './dificultad.pipe';
 import { InstrumentoPipe } from './instrumento.pipe';
 import { NuevalineaPipe } from './nuevalinea.pipe';
 import { HomeComponent } from './home/home.component';
+import { ArmarMenuComponent } from './armar-menu/armar-menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { HomeComponent } from './home/home.component';
     DificultadPipe,
     InstrumentoPipe,
     NuevalineaPipe,
-    HomeComponent
+    HomeComponent,
+    ArmarMenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
